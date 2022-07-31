@@ -1,6 +1,11 @@
-# CentralAilos
+# Central Ailos
 
+NodeJS v16.16.0
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+
+## Versão de produção
+
+Hospedado em `https://central-ailos-desafio-angular.netlify.app/`
 
 ## Development server
 
