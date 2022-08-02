@@ -19,4 +19,14 @@
           </p>
         </div>
     </form>
+    <div id="cooperado" *ngIf="situacaoCpf">
+      <h3>Situação cadastral do CPF</h3>
+      <small>Consulta na Receita Federal</small>
+      <div>
+        <small>Nome</small>
+        <p>{{situacaoCpf.nome}}</p>
+        <small>Situação do CPF</small>
+        <p>{{situacaoCpf.status ? 'Regular' : 'Irregular'}}</p>
+      </div>
+    </div>
 </section>
