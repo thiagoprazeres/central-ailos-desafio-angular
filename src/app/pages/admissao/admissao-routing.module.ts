@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NovaAdmissaoComponent } from './nova-admissao.component';
+import { AdmissaoComponent } from './admissao.component';
 
-const routes: Routes = [{ path: '', component: NovaAdmissaoComponent }];
+const routes: Routes = [{ path: '', component: AdmissaoComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class NovaAdmissaoRoutingModule { }
+export class AdmissaoRoutingModule { }
