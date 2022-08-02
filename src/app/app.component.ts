@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'central-ailos';
+  enviar(cpf: string) {
+    console.log('teste: ' + cpf);
+  }
 }
