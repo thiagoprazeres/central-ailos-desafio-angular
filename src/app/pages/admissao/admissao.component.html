@@ -8,13 +8,13 @@
         Digiet apenas os números (sem pontos ou traços)</p>
     <form [formGroup]="admissaoForm" (ngSubmit)="enviar()">
         <label for="cpf">CPF</label>
-        <input type="tel" id="cpf" aria-describedby="CPF" formControlName="cpf">
+        <input type="tel" id="cpf" aria-describedby="CPF" formControlName="cpf" maxlength="11">
         <button type="submit">Consulta CPF</button>
         <div *ngIf="cpf?.invalid && (cpf?.dirty || cpf?.touched)">
           <p *ngIf="cpf?.errors?.['required']">
             CPF é obrigatório.
           </p>
-          <p *ngIf="false">
+          <p *ngIf="!cpf?.errors?.['required'] && cpf?.errors?.['cpfInvalido']">
             Digite um CPF válido
           </p>
         </div>
