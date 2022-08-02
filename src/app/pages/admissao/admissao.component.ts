@@ -10,6 +10,7 @@ import { ColaboradorService } from './../../services/colaborador.service';
 export class AdmissaoComponent implements OnInit {
   admissaoForm: FormGroup;
   situacaoCpf: any;
+  submitted = false;
 
   constructor(private colaboradorService: ColaboradorService, private formBuilder: FormBuilder) {
     this.admissaoForm = this.formBuilder.group({
@@ -31,6 +32,9 @@ export class AdmissaoComponent implements OnInit {
         nome: 'Mariane de Sousa Oliveira',
         status: true
       }
+    } else {
+      this.situacaoCpf = null;
+      this.submitted = true;
     }
   }
 

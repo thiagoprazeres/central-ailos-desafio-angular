@@ -8,9 +8,9 @@
         Digiet apenas os números (sem pontos ou traços)</p>
     <form [formGroup]="admissaoForm" (ngSubmit)="enviar()">
         <label for="cpf">CPF</label>
-        <input type="tel" id="cpf" aria-describedby="CPF" formControlName="cpf" maxlength="11">
+        <input type="tel" id="cpf" aria-describedby="CPF" formControlName="cpf" maxlength="11" placeholder="Digite apenas números">
         <button type="submit">Consulta CPF</button>
-        <div *ngIf="cpf?.invalid && (cpf?.dirty || cpf?.touched)">
+        <div *ngIf="cpf?.invalid && (cpf?.dirty || cpf?.touched) && admissaoForm.statusChanges">
           <p *ngIf="cpf?.errors?.['required']">
             CPF é obrigatório.
           </p>
@@ -28,5 +28,8 @@
         <small>Situação do CPF</small>
         <p>{{situacaoCpf.status ? 'Regular' : 'Irregular'}}</p>
       </div>
+    </div>
+    <div *ngIf="submitted && !situacaoCpf">
+      Cooperado não encontrado.
     </div>
 </section>
