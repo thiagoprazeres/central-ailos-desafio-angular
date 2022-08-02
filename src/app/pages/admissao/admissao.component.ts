@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ColaboradorService } from './../../services/colaborador.service';
 
 @Component({
@@ -12,11 +12,15 @@ export class AdmissaoComponent implements OnInit {
 
   constructor(private colaboradorService: ColaboradorService, private formBuilder: FormBuilder) {
     this.admissaoForm = this.formBuilder.group({
-      cpf: ''
+      cpf: ['', Validators.compose([Validators.required])]
     });
   }
 
   ngOnInit(): void {
+  }
+
+  get cpf() {
+    return this.admissaoForm.get('cpf');
   }
 
   enviar() {
